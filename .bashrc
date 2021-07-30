@@ -1,6 +1,5 @@
-export PATH="/usr/local/mpich-3.2/bin:$PATH"
 export HOMER=${HOME}/real
-#export EMUDIR=$HOMER/emu_dev/emu
+export EMUDIR=$HOMER/projects/emu_dev/emu
 export PATH=${HOMER}/bin:$PATH
 
 # COMMAND ALIASES
@@ -14,10 +13,8 @@ alias ll=bashrc_list_function
 #alias dbll='dbxcli ls -l'
 
 # DIRECTORY SHORTCUTS
-#alias boe='cd ${HOMER}/boeing/'
-#alias deb='cd ${HOMER}/debug_boeing/'
 alias home='cd ${HOMER}'
-#alias dev='cd ${EMUDIR}'
+alias dev='cd ${EMUDIR}'
 
 # GIT ALIASES
 alias gstat='git status'
@@ -41,9 +38,6 @@ function bashrc_list_function(){
 }
 
 # PROMPT STYLING
-#PS1='\[\e[36m\]\u@\h:\w\>\[\e[0m\] '
-#export PS1='\[\e[36m\]$(whoami):${PWD#"${PWD%/*/*}\\>\[\e[0m\] '
-#PS1='\[\e[36m\]$(whoami):${PWD#"${PWD%/*/*/*}/"}|>\[\e[0m\] '
 PS1='\[\033[38;5;32m\]$(whoami):'                # Username
 PS1+='\[\e[36m\]${PWD#"${PWD%/*/*/*}/"}'  # Directory
 PS1+='\[\e[32m\]|>\[\e[0m\]'              # Rest
@@ -55,11 +49,11 @@ PROMPT_COMMAND='echo -en "\033]0;$(hostname | cut -c1 | tr '[[:lower:]]' '[[:upp
 #TERM=xterm
 #export $TERM=xterm-256color
 
-# VIMRC REPLACEMENT    ^[[>0;136;0c
+# VIMRC REPLACEMENT
 export MYVIMRC=${HOMER}/config/.vimrc
 alias vim='vim -u $MYVIMRC'
 
-export VIMINIT=/home/hallrc/real/config/.vimrc
+export VIMINIT=${HOMER}/config/.vimrc
 
 # AUTOCOMPLETE SETTING
 complete -d cd
