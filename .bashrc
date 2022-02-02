@@ -1,5 +1,4 @@
-export HOMER=${HOME}/real
-export EMUDIR=$HOMER/projects/emu_dev/emu
+export HOMER=${HOME}
 export PATH=${HOMER}/bin:$PATH
 
 # COMMAND ALIASES
@@ -7,14 +6,9 @@ alias dus='du -h --max-depth=1 | sort -h'
 alias ls='ls --color=always'
 alias grep='grep -n --color=always'
 alias ll=bashrc_list_function
-#alias qst='qstat -u guven'
-#alias space='df -h /xdisk/guven/'
-#alias db='dbxcli'
-#alias dbll='dbxcli ls -l'
 
 # DIRECTORY SHORTCUTS
 alias home='cd ${HOMER}'
-alias dev='cd ${EMUDIR}'
 
 # GIT ALIASES
 alias gstat='git status'
@@ -23,7 +17,7 @@ alias glog='git log'
 alias glogg='git log --all --decorate --oneline --graph'
 alias ggol='git log --all --decorate --oneline -20 --reverse'
 
-export GIT_AUTHOR_NAME='Riley Hall'
+# export GIT_AUTHOR_NAME=''
 
 # EMU GREP SHORTCUT FUNCTION
 function grp(){
@@ -57,4 +51,3 @@ export VIMINIT=${HOMER}/config/.vimrc
 
 # AUTOCOMPLETE SETTING
 complete -d cd
-
